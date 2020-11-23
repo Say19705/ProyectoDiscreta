@@ -14,11 +14,14 @@ print(conjuntoCo)
 conjuntoPe = conjunto
 combFlag = False
 permFlag = False
-Kseleccion = input("Cuantos elementos desea seleccionar del conjunto: ")
+Kseleccion = int(input("Cuantos elementos desea seleccionar del conjunto: "))
 opcion = input("Ingrese lo que desea imprimir: \n1. permutaciones \n2. combinaciones \n3. ambas \n->")
 if opcion == "1":
     permFlag = True
 elif opcion == "2":
+    listaF = pr.elementos(conjuntoCo)
+    resultComb = pr.combinaciones(listaF, Kseleccion)
+    imprimeComb=pr.imprime_ordenado(resultComb)
     combFlag = True
 elif opcion == 3:
     permFlag = True

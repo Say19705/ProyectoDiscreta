@@ -16,9 +16,11 @@ def repetidos(conjunto):
         sinRepetidos += j
     return sinRepetidos
         
-
-
-    
+def elementos(sinrepetidos):
+    listaFinal = []
+    for i in sinrepetidos:
+        listaFinal.append(i)
+    return listaFinal
 
 def potencia(c):
     if len(c) == 0:
