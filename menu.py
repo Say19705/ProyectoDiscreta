@@ -20,12 +20,11 @@ while flag:
         Kseleccion = int(input("Cuantos elementos desea seleccionar del conjunto: "))
         flag = False            
     except:
-        print("Debes ingresar un número entero, menor o igual a la cantidad de elementos del conjunto")
+        print("Debes ingresar un número entero, menor o igual a la cantidad de elementos del conjunto, intente otra vez por favor :) \n")
 
 flag = True
 while flag:
     try:
-        
         opcion = input("Ingrese lo que desea imprimir: \n1. permutaciones \n2. combinaciones \n3. ambas \n4. salir\n->")
         if opcion == "1":
             permFlag = True
@@ -34,13 +33,13 @@ while flag:
             resultComb = pr.combinaciones(listaF, Kseleccion)
             imprimeComb=pr.imprime_ordenado(resultComb)
             combFlag = True
-        elif opcion == 3:
+        elif opcion == "3":
             permFlag = True
             combFlag == True
-        elif opción == 4:
+        elif opcion == "4":
             print("Gracias por usar el programa")
             flag = False
     except:
-        print("Has ingresado algo mal, intenta otra vez")
+        print("Has ingresado algo mal, intenta otra vez \n")
     
 #-----------En teoría aqui van las impresiones
