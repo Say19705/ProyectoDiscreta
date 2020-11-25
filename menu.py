@@ -5,7 +5,7 @@
 #Ayleen Rubio 19003
 
 #Importar el módulo de funciones 
-import Principal as pr
+import modulo as pr
 
 
 #Comenzar el programa con un mensaje de bienvenida
