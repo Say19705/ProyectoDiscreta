@@ -32,14 +32,14 @@ def imprime_ordenado(c):
     for e in sorted(c, key=lambda s: (len(s), s)):
         print(e)
         
-imprime_ordenado(potencia(["cereza", "chocolate", "fresa", "cereza"]))
+#imprime_ordenado(potencia(["cereza", "chocolate", "fresa", "cereza"]))
 
 print()
 
 def combinaciones(c,n):
     return [s for s in potencia (c) if len(s) ==n]
 
-imprime_ordenado(combinaciones(["cereza", "chocolate", "fresa", "cereza"],2))
+#imprime_ordenado(combinaciones(["cereza", "chocolate", "fresa", "cereza"],2))
 
 
 #-------------------------------------------------------------------------
@@ -59,7 +59,7 @@ def permutacionesTotales(lista):
         return temp
 
 data =list("abc")
-print("perm1")
-for p in permutacionesTotales(data):
-    print(p)
+#print("perm1")
+#for p in permutacionesTotales(data):
+#    print(p)
 
