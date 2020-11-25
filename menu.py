@@ -10,7 +10,7 @@ print("------------------------------------------------")
 print("-------------Menasaje de Bienvenida-------------")
 conjunto = input("Ingrese un conjunto de letras: ")
 conjuntoCo = pr.repetidos(conjunto)
-print(conjuntoCo)
+#print(conjuntoCo)
 conjuntoPe = conjunto
 combFlag = False
 permFlag = False
