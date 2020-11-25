@@ -1,7 +1,8 @@
-#Proyecto discreta
-#Julio marcos monzón
-#Andrés Say Agosto
-#Ayleen Rubio
+#Proyecto Final
+#Matematica Discreta 1 seccion 10
+#Julio Marcos Monzón 19226
+#Andrés Say Agosto 19705
+#Ayleen Rubio 19003
 
 #Importar el módulo de funciones 
 import Principal as pr
@@ -20,26 +21,39 @@ conjuntoPe = conjunto
 #permFlag = False
 
 #Bandera para el ciclo while de elegir el valor k
-flag = True
+flag1 = True
 #Inicio del ciclo while
-while flag:
+while flag1:
     #Try por si el usuario ingresa algo equivocado
     try:
         #ingreso del valor k
         Kseleccion = int(input("Cuantos elementos desea seleccionar del conjunto: "))
         #verifica que la k no sea mayor a la cantidad de elementos del conjunto, si lo es, vuelve a pedir el valor k
-        if Kseleccion > len(conjunto):
-            print(len(conjunto))
-            print("Debes ingresar un valor menor o igual a la cantidad de elementos del conjunto")
-            flag = True
+        if Kseleccion == -1:
+            print("A continuacion se le mostrarán todas las posibles opciones tanto de combinaciones como de permutaciones\n")
+            print("--------------------Combinaciones----------------------")
+            listaF = pr.elementos(conjuntoCo) #Convetir el conjunto de combinaciones en lista
+            potenciaC = pr.ConjuntoPotencia(listaF) #Obtener el conjunto potencia
+            pr.MostrarOrdenado(potenciaC) #Mostrar el conjunto potencia
+            print("--------------------Permutaciones----------------------")
+            listaF = pr.elementos(conjuntoPe) #Convertir el conjunto de permutaciones en lista
+            potenciaP = pr.permutacion(listaF) #Obtener todas las permutaciones posibles
+            pr.MostrarOrdenado(potenciaP) #Mostrar todas las permutaciones posibles
+            flag1 = False
+            print("Gracias por utilizar el programa")
+        elif Kseleccion > len(conjunto):
+            print("Debes ingresar un valor menor o igual a la cantidad de elementos del conjunto, intentelo de nuevo por favor \n")
+            flag1 = True
         else:
             #Se sale del ciclo
-            flag = False
+            flag1 = False
     except:
         print("Has ingresado algo incorrecto, intenta otra vez \n")
 
 #nueva bandera para el ciclo while del menu
 flag = True
+if Kseleccion == -1:
+    flag = False
 #Inicio del ciclo while
 while flag:
     #Try para agarrar errores de ingreso
@@ -49,9 +63,13 @@ while flag:
         #popcion 1 permutaciones
         if opcion == "1":
             print("--------------------Permutaciones----------------------")
+            listaF = pr.elementos(conjuntoPe) #Convetir el conjunto de combinaciones en lista 
+            resultPerm = pr.permutarConK(listaF,Kseleccion) #Obtener la lista de permutaciones posibles para el valor k
+            imprimePerm = pr.MostrarOrdenado(resultPerm) #Impirmir resultado
             permFlag = True
         #opcion 2 combinaciones
         elif opcion == "2":
+            print("--------------------Combinaciones----------------------")
             #bandera para ciclo while de verificacion
             bandera2 = True
             #igualar la k ingresada
@@ -61,7 +79,7 @@ while flag:
                 if Kseleccion > len(conjuntoCo):
                     #mostrar conjunto sin repetir
                     print("Este es el conjunto sin elementos repetidos: ",conjuntoCo)
-                    newK = int(input("Su valor k es menor a la cantidad de valores sin repetir, para mostrar las combinaciones, elija de nuevo: \n"))
+                    newk = int(input("Su valor k es mayor a la cantidad de valores sin repetir, para mostrar las combinaciones, elija de nuevo: "))
                     #verificar que sea menor
                     if newk > len(conjuntoCo):
                         print("Ha vuelto a ingresar un valor erróneo")
@@ -69,12 +87,12 @@ while flag:
                         bandera2 = False
                 else:
                     bandera2 = False
-            #Convetir el conjunto de conbinaciones en lista 
+            #Convetir el conjunto de combinaciones en lista 
             listaF = pr.elementos(conjuntoCo)
             #Obtener la lista de combinaciones posibles para el valor k
             resultComb = pr.combinaciones(listaF, newk)
             #Impirmir resultado
-            imprimeComb=pr.imprime_ordenado(resultComb)
+            imprimeComb=pr.MostrarOrdenado(resultComb)
         #opcion 3 permutaciones y combinaciones
         elif opcion == "3":
             #bandera para ciclo while de verificacion
@@ -86,7 +104,7 @@ while flag:
                 if Kseleccion > len(conjuntoCo):
                     #mostrar conjunto sin repetir
                     print("Este es el conjunto sin elementos repetidos: ",conjuntoCo)
-                    newK = int(input("Su valor k es menor a la cantidad de valores sin repetir, para mostrar las combinaciones, elija de nuevo: \n"))
+                    newk = int(input("Su valor k es mayor a la cantidad de valores sin repetir, para mostrar las combinaciones, elija de nuevo: "))
                     #verificar que sea menor
                     if newk > len(conjuntoCo):
                         print("Ha vuelto a ingresar un valor erróneo")
@@ -95,13 +113,16 @@ while flag:
                 else:
                     bandera2 = False
             print("---------------Combinaciones----------------")
-            #Convetir el conjunto de conbinaciones en lista 
+            #Convetir el conjunto de combinaciones en lista 
             listaF = pr.elementos(conjuntoCo)
             #Obtener la lista de combinaciones posibles para el valor k
             resultComb = pr.combinaciones(listaF, newk)
             #Impirmir resultado
-            imprimeComb=pr.imprime_ordenado(resultComb)
-            print("----------------Combinaciones--------------")
+            imprimeComb=pr.MostrarOrdenado(resultComb)
+            print("----------------Permutaciones--------------")
+            listaF2 = pr.elementos(conjuntoPe) #Convetir el conjunto de combinaciones en lista 
+            resultPerm = pr.permutarConK(listaF2,Kseleccion) #Obtener la lista de permutaciones posibles para el valor k
+            pr.MostrarOrdenado(resultPerm) #Impirmir resultado
         #Opcion 4 salir del menu
         elif opcion == "4":
             print("Gracias por usar el programa")
@@ -109,4 +130,3 @@ while flag:
     except:
         print("Has ingresado algo mal, intenta otra vez \n")
     
-#-----------En teoría aqui van las impresiones
