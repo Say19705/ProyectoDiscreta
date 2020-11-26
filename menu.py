@@ -38,7 +38,7 @@ while flag1:
             print("--------------------Permutaciones----------------------")
             listaF = pr.elementos(conjuntoPe) #Convertir el conjunto de permutaciones en lista
             potenciaP = pr.permutacion(listaF) #Obtener todas las permutaciones posibles
-            pr.MostrarOrdenado(potenciaP) #Mostrar todas las permutaciones posibles
+            pr.MostrarOrdenado(pr.repetidosPerm(potenciaP)) #Mostrar todas las permutaciones posibles
             flag1 = False
             print("Gracias por utilizar el programa")
         elif Kseleccion > len(conjunto):
@@ -65,7 +65,7 @@ while flag:
             print("--------------------Permutaciones----------------------")
             listaF = pr.elementos(conjuntoPe) #Convetir el conjunto de combinaciones en lista 
             resultPerm = pr.permutarConK(listaF,Kseleccion) #Obtener la lista de permutaciones posibles para el valor k
-            imprimePerm = pr.MostrarOrdenado(resultPerm) #Impirmir resultado
+            imprimePerm = pr.MostrarOrdenado(pr.repetidosPerm(resultPerm)) #Impirmir resultado
             permFlag = True
         #opcion 2 combinaciones
         elif opcion == "2":
@@ -122,7 +122,7 @@ while flag:
             print("----------------Permutaciones--------------")
             listaF2 = pr.elementos(conjuntoPe) #Convetir el conjunto de combinaciones en lista 
             resultPerm = pr.permutarConK(listaF2,Kseleccion) #Obtener la lista de permutaciones posibles para el valor k
-            pr.MostrarOrdenado(resultPerm) #Impirmir resultado
+            pr.MostrarOrdenado(pr.repetidosPerm(resultPerm)) #Impirmir resultado
         #Opcion 4 salir del menu
         elif opcion == "4":
             print("Gracias por usar el programa")

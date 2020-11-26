@@ -66,3 +66,26 @@ def permutarConK (cnjnto, n): #Calcular y mostrar permutaciones con k elementos
                     for s in combinaciones(cnjnto,n)],
                    [])
     return devolver
+
+
+
+def repetidosPerm (conjunto): #Quita las permutaciones repetidas en caso se repita una letra
+    listaStrings = []
+    
+    for i in conjunto:
+        temp = ""
+        for j in range(0,len(i)):
+            temp += str(i[j])
+            
+        listaStrings.append(temp)
+        
+    sinRep = set(listaStrings)
+    final = []
+    
+    for k in sinRep:
+        final.append([k])
+        
+    return final
+
+
+    
