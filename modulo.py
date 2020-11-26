@@ -7,7 +7,7 @@
 #Referencias consultadas:
 #http://edupython.blogspot.com/2016/06/combinaciones-permutaciones-y-otras.html
 #http://edupython.blogspot.com/2016/06/potenciando-conjuntos.html
-#
+#https://stackoverrun.com/es/q/2147027
 
 from itertools import combinations
 
